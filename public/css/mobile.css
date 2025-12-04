@@ -723,6 +723,15 @@
     }
 
     /* ============================================
+       FOOTER SOCIAL ICONS FIX
+       ============================================ */
+    .footer-social {
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 1.5rem !important;
+    }
+
+    /* ============================================
        CHAT WIDGET - MOBILE
        ============================================ */
     .ai-chat-widget {
@@ -835,6 +844,101 @@
     .footer-content {
         overflow-x: hidden !important;
     }
+
+    /* ============================================
+       GOOGLE REVIEWS FIX
+       ============================================ */
+    .google-logo {
+        height: 40px !important;
+        width: auto !important;
+        max-width: 40px !important;
+    }
+    
+    .google-rating {
+        margin-bottom: 2rem !important;
+        gap: 1rem !important;
+    }
+    
+    .rating-score {
+        font-size: 1.5rem !important;
+    }
+    
+    .rating-stars {
+        font-size: 1.2rem !important;
+    }
+
+    /* ============================================
+       IMPLANT PAGE FIXES
+       ============================================ */
+    .implant-options {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .candidate-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .candidate-sidebar {
+        margin-top: 1rem !important;
+    }
+
+    /* ============================================
+       PAYMENT LOGOS FIX
+       ============================================ */
+    .payment-logos {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .payment-logos img {
+        height: 24px !important;
+        width: auto !important;
+        max-width: 80px !important;
+        object-fit: contain !important;
+    }
+
+    .accreditation-logos {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 1rem !important;
+        flex-wrap: wrap !important;
+    }
+
+    .accreditation-logos img {
+        height: 32px !important;
+        width: auto !important;
+    }
+
+    /* ============================================
+       WHITESPACE & LAYOUT FIXES
+       ============================================ */
+    .about-preview {
+        padding: 2rem 0 !important;
+    }
+
+    .about-preview-image {
+        height: 250px !important;
+        margin-top: 1.5rem !important;
+    }
+
+    .offer-banner {
+        padding: 2rem 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .offer-banner-content {
+        gap: 1.5rem !important;
+    }
+    
+    .offer-price-box {
+        transform: none !important;
+        margin-top: 1rem !important;
+    }
 }
 
 /* Small phones */
@@ -884,5 +988,831 @@
 
     section {
         padding: 1.5rem 0 !important;
+    }
+}
+
+/* ============================================
+   ABOUT PAGE MOBILE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+    .about-intro,
+    .about-details,
+    .commitment-section,
+    .team-section,
+    .payment-section {
+        padding: 2rem 0 !important;
+    }
+
+    .about-intro-content,
+    .about-details-content {
+        gap: 1.5rem !important;
+    }
+
+    /* Fix large gap below woman with glasses */
+    .about-intro-image {
+        height: 250px !important;
+        min-height: 0 !important;
+        margin-top: 1rem !important;
+    }
+
+    /* Fix large gap below Dr Angelo */
+    .team-card {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    .team-image {
+        height: 280px !important;
+        min-height: 0 !important;
+    }
+
+    .team-info {
+        padding: 1.5rem !important;
+    }
+    
+    /* Reduce gap between sections */
+    .section-header {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .team-grid {
+        gap: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   IMAGE FILL FIXES
+   ============================================ */
+@media (max-width: 768px) {
+    /* Allow booking image container to shrink to fit image */
+    .booking-image {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+    
+    /* Ensure about intro image fills the fixed 250px height we set */
+    .about-intro-image img {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+}
+
+/* ============================================
+   IMAGE VISIBILITY RESTORATION
+   ============================================ */
+@media (max-width: 768px) {
+    .booking-image {
+        height: auto !important;
+        min-height: auto !important;
+        display: block !important;
+        width: 100% !important;
+        overflow: visible !important; /* Ensure shadow/content isn't clipped weirdly */
+    }
+    
+    .booking-image img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        min-height: 200px !important; /* Force minimum height to prevent collapse */
+        object-fit: cover !important;
+    }
+}
+
+/* ============================================
+   FIX OVERLAPPING CONTENT
+   ============================================ */
+@media (max-width: 768px) {
+    .booking-image img {
+        position: relative !important; /* Override absolute positioning from styles.css */
+        left: auto !important;
+        top: auto !important;
+    }
+}
+
+/* ============================================
+   SPECIAL OFFERS PAGE MOBILE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .offer-hero {
+        padding: calc(56px + 2rem) 1rem 3rem 1rem !important;
+        text-align: center !important;
+    }
+
+    .offer-hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+
+    .offer-hero-text h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .offer-hero-price {
+        justify-content: center !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    .offer-hero-details {
+        padding: 1.5rem !important;
+        text-align: left !important;
+    }
+
+    /* Offers Grid */
+    .offers-grid-section {
+        padding: 2rem 0 !important;
+    }
+
+    .offers-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .offer-card {
+        margin-bottom: 0 !important;
+    }
+
+    /* Whitening Details */
+    .whitening-details {
+        padding: 2rem 0 !important;
+    }
+
+    .whitening-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+
+    .whitening-text h2 {
+        font-size: 1.75rem !important;
+        text-align: center !important;
+    }
+
+    .whitening-text > p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .whitening-image {
+        height: 250px !important;
+        transform: none !important;
+        margin-top: 0 !important;
+        width: 100% !important;
+    }
+
+    .whitening-image img {
+        object-fit: cover !important;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .whitening-terms {
+        margin-top: 1rem !important;
+    }
+
+    /* About Preview Compact */
+    .about-preview.compact {
+        padding: 2rem 0 !important;
+    }
+
+    .about-preview.compact .about-preview-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+
+    .about-preview.compact .about-preview-text {
+        padding-right: 0 !important;
+    }
+
+    .about-preview-logos {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 1.5rem !important;
+    }
+
+    .about-preview-logos img {
+        max-height: 50px !important;
+    }
+}
+
+/* ============================================
+   SPECIAL OFFERS - REFINED MOBILE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+    /* --- HERO SECTION REFINEMENTS --- */
+    .offer-hero {
+        padding: calc(56px + 1.5rem) 1rem 2rem 1rem !important;
+    }
+
+    .offer-hero-text h1 {
+        font-size: 1.75rem !important; /* Reduced from 2rem/3rem */
+        margin-bottom: 0.5rem !important;
+    }
+
+    .offer-hero-price {
+        flex-direction: row !important;
+        align-items: baseline !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .offer-hero-price .price-label {
+        font-size: 1rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .offer-hero-price .price-amount {
+        font-size: 3.5rem !important; /* Reduced from 5rem */
+        line-height: 1 !important;
+    }
+
+    .offer-hero-details {
+        text-align: left !important;
+        padding: 1.25rem !important;
+        background: rgba(0, 0, 0, 0.2) !important; /* Darker background for better contrast */
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .offer-hero-details h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important; /* Keep header centered? Or left? User said "list left aligned". Header centered looks okay usually. Let's try left for neatness. */
+        text-align: left !important;
+    }
+
+    .offer-hero-details ul {
+        margin-bottom: 1rem !important;
+    }
+
+    .offer-hero-details ul li {
+        justify-content: flex-start !important;
+        text-align: left !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 0.5rem !important;
+        padding-left: 0 !important;
+        display: flex !important;
+        align-items: flex-start !important;
+    }
+
+    /* Add checkmarks if missing */
+    .offer-hero-details ul li::before {
+        content: '✓';
+        color: var(--accent-primary); /* Or a bright color */
+        color: #4ade80 !important; /* Bright green for visibility */
+        font-weight: bold;
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+
+    .offer-terms {
+        font-size: 0.8rem !important;
+        color: rgba(255, 255, 255, 0.9) !important; /* High contrast */
+        line-height: 1.4 !important;
+        text-align: left !important;
+    }
+
+    /* --- OFFERS GRID REFINEMENTS --- */
+    .offers-grid {
+        gap: 1.5rem !important;
+    }
+
+    .offer-card {
+        background: #ffffff !important; /* Force white background */
+        padding: 1.5rem !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+    }
+
+    .offer-card-header h3 {
+        font-size: 1.3rem !important;
+        color: #1a202c !important; /* Dark text */
+    }
+
+    .offer-card-header p {
+        color: #4a5568 !important; /* Dark grey text */
+    }
+
+    .offer-card-price {
+        border-bottom: 1px solid #e2e8f0 !important;
+        margin-bottom: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .offer-card-price .price-label {
+        color: #718096 !important;
+    }
+
+    .offer-card-price .price-amount {
+        color: var(--primary-dark) !important; /* Dark teal instead of light green */
+        font-weight: 800 !important;
+        font-size: 2.5rem !important;
+    }
+
+    .offer-card-features li {
+        color: #2d3748 !important; /* Dark text */
+        font-size: 0.95rem !important;
+    }
+    
+    .offer-card-note {
+        color: #718096 !important;
+    }
+}
+
+/* ============================================
+   WHITESPACE REDUCTION - SPECIAL OFFERS
+   ============================================ */
+@media (max-width: 768px) {
+    /* Tighter Hero Section */
+    .offer-hero {
+        padding-bottom: 1.5rem !important;
+    }
+
+    .offer-hero-content {
+        gap: 1rem !important;
+    }
+
+    .offer-hero-text h1 {
+        margin-bottom: 0.25rem !important;
+    }
+
+    .offer-hero-price {
+        margin-bottom: 1rem !important;
+    }
+
+    .offer-hero-details {
+        padding: 1rem !important;
+    }
+
+    .offer-hero-details ul {
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* Tighter Grid Section */
+    .offers-grid-section {
+        padding: 1.5rem 0 !important;
+    }
+
+    .offers-grid {
+        gap: 1rem !important;
+    }
+
+    .offer-card {
+        padding: 1.25rem !important;
+    }
+
+    .offer-card-header {
+        margin-bottom: 0.75rem !important;
+    }
+
+    .offer-card-price {
+        margin-bottom: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    /* Tighter Whitening Section */
+    .whitening-details {
+        padding: 1.5rem 0 !important;
+    }
+
+    .whitening-content {
+        gap: 1.5rem !important;
+    }
+    
+    .whitening-text h2 {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .whitening-text > p {
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* ============================================
+   EXTREME WHITESPACE REDUCTION - SPECIAL OFFERS
+   ============================================ */
+@media (max-width: 768px) {
+    /* Reduce section padding */
+    .offer-hero {
+        padding-bottom: 1rem !important;
+    }
+    
+    .offers-grid-section {
+        padding: 0.5rem 0 1.5rem 0 !important; /* Top padding reduced significantly */
+    }
+    
+    .whitening-details {
+        padding: 1rem 0 !important;
+    }
+
+    /* Reduce Offer Card internal spacing */
+    .offer-card {
+        padding: 1rem !important;
+    }
+    
+    .offer-card-header {
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .offer-card-header h3 {
+        margin-bottom: 0.25rem !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .offer-card-price {
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    .offer-card-features {
+        margin-bottom: 1rem !important;
+    }
+    
+    .offer-card-features li {
+        margin-bottom: 0.25rem !important;
+    }
+    
+    /* Reduce gap between cards */
+    .offers-grid {
+        gap: 0.75rem !important;
+    }
+    
+    /* Reduce button margins in cards */
+    .offer-card .btn {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .offer-card-note {
+        margin-top: 0 !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* ============================================
+   INCREASE SPACING - SPECIAL OFFERS (BALANCED)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Increase section padding for better separation */
+    .offer-hero {
+        padding-bottom: 3rem !important;
+    }
+    
+    .offers-grid-section {
+        padding: 2rem 0 4rem 0 !important;
+    }
+    
+    .whitening-details {
+        padding: 3rem 0 !important;
+    }
+
+    /* Increase gap between offer cards */
+    .offers-grid {
+        gap: 2.5rem !important;
+    }
+    
+    /* Restore some internal card padding */
+    .offer-card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* ============================================
+   INCREASE SECTION SPACING - SPECIAL OFFERS (FINAL)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Generous spacing between all major sections */
+    .offer-hero {
+        padding-bottom: 4rem !important;
+    }
+
+    .offers-intro,
+    .offers-grid-section,
+    .whitening-details,
+    .payment-section,
+    .oral-health-tips,
+    .about-preview,
+    .booking-cta {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+    
+    /* Ensure the grid itself has breathing room */
+    .offers-grid {
+        gap: 3rem !important;
+    }
+}
+
+/* ============================================
+   REDUCE SPACING - SPECIAL OFFERS (ADJUSTMENT)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Reduce section padding back to a reasonable amount */
+    .offer-hero {
+        padding-bottom: 2rem !important;
+    }
+
+    .offers-intro,
+    .offers-grid-section,
+    .whitening-details {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    /* Specifically reduce the footer/payment sections which looked too empty */
+    .payment-section,
+    .oral-health-tips,
+    .about-preview,
+    .booking-cta {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    /* Tighten the grid gap slightly */
+    .offers-grid {
+        gap: 2rem !important;
+    }
+}
+
+/* ============================================
+   DRASTIC INTERNAL SPACING REDUCTION - OFFER CARDS
+   ============================================ */
+@media (max-width: 768px) {
+    /* 1. Reduce space between Header and Price */
+    .offer-card-header {
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .offer-card-header p {
+        margin-bottom: 0 !important;
+    }
+
+    /* 2. Reduce space between Price and Features */
+    .offer-card-price {
+        margin-top: 0.25rem !important;
+        padding-top: 0 !important;
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    /* 3. Reduce space between Features and Button */
+    .offer-card-features {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* 4. Reduce space between Button and Note */
+    .offer-card .btn {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .offer-card-note {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* ============================================
+   AGGRESSIVE INTERNAL CARD SPACING FIX - FINAL
+   ============================================ */
+@media (max-width: 768px) {
+    /* Remove ALL extra spacing inside offer cards */
+    .offer-card {
+        padding: 1.25rem !important;
+    }
+    
+    /* Header section - minimal spacing */
+    .offer-card-header {
+        margin-bottom: 0.5rem !important;
+        padding-right: 0 !important;
+    }
+    
+    .offer-card-header h3 {
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .offer-card-header p {
+        margin-bottom: 0 !important;
+    }
+    
+    /* Price section - tight spacing */
+    .offer-card-price {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+        padding-top: 0 !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    /* Features list - tight spacing */
+    .offer-card-features {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+        padding: 0 !important;
+    }
+    
+    .offer-card-features li {
+        margin-bottom: 0.35rem !important;
+        gap: 8px !important;
+    }
+    
+    /* Button - tight spacing */
+    .offer-card .btn {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.35rem !important;
+        padding: 0.75rem !important;
+    }
+    
+    /* Note at bottom - minimal spacing */
+    .offer-card-note {
+        margin-top: 0.25rem !important;
+        padding: 0 !important;
+    }
+    
+    /* Badge positioning fix */
+    .offer-card-badge {
+        position: absolute !important;
+        top: 1rem !important;
+        right: 1rem !important;
+        margin: 0 !important;
+        font-size: 0.7rem !important;
+        padding: 4px 10px !important;
+    }
+}
+
+/* ============================================
+   FIX CARD HEIGHT & FLEX-GROW ISSUE - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+    /* Remove fixed height so cards shrink to content */
+    .offer-card {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+    
+    /* Remove flex-grow so features don't expand */
+    .offer-card-features {
+        flex-grow: 0 !important;
+        flex: none !important;
+    }
+}
+
+/* ============================================
+   FINAL FIX - OFFER CARDS MOBILE ONLY
+   ============================================ */
+@media (max-width: 768px) {
+    /* Card layout - disable flex stretching */
+    .offer-card {
+        display: block !important;
+        height: auto !important;
+        padding: 1rem !important;
+    }
+    
+    /* Badge - position below header, not overlapping */
+    .offer-card-badge {
+        position: static !important;
+        display: inline-block !important;
+        margin-bottom: 0.5rem !important;
+        font-size: 0.65rem !important;
+        padding: 3px 8px !important;
+    }
+    
+    /* Header - tight */
+    .offer-card-header {
+        margin-bottom: 0.25rem !important;
+        padding-right: 0 !important;
+    }
+    
+    .offer-card-header h3 {
+        font-size: 1.15rem !important;
+        margin-bottom: 0.15rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .offer-card-header p {
+        margin-bottom: 0.25rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Price - very tight */
+    .offer-card-price {
+        margin: 0.25rem 0 0.5rem 0 !important;
+        padding: 0 0 0.4rem 0 !important;
+    }
+    
+    .offer-card-price .price-amount {
+        font-size: 2rem !important;
+    }
+    
+    /* Features - no extra space */
+    .offer-card-features {
+        margin: 0 0 0.5rem 0 !important;
+        padding: 0 !important;
+        flex-grow: 0 !important;
+        flex: none !important;
+    }
+    
+    .offer-card-features li {
+        margin-bottom: 0.2rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Button - tight */
+    .offer-card .btn {
+        margin: 0.4rem 0 0.25rem 0 !important;
+        padding: 0.6rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    /* Note - minimal */
+    .offer-card-note {
+        margin: 0.2rem 0 0 0 !important;
+        padding: 0 !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ============================================
+   MOBILE DROPDOWN MENU TEXT FIX
+   ============================================ */
+@media (max-width: 768px) {
+    /* Make dropdown submenu text visible */
+    .dropdown-menu {
+        background: white !important;
+    }
+    
+    .dropdown-menu a {
+        color: #1a202c !important;
+    }
+    
+    .dropdown-menu li a {
+        color: #1a202c !important;
+    }
+    
+    /* Submenu items */
+    .dropdown-submenu > a {
+        color: #1a202c !important;
+    }
+    
+    .dropdown-submenu .dropdown-menu a {
+        color: #1a202c !important;
+    }
+}
+
+/* ============================================
+   MOBILE FORM STYLING
+   ============================================ */
+@media (max-width: 768px) {
+    /* Form container */
+    .contact-form,
+    .callback-form {
+        padding: 1rem !important;
+    }
+    
+    /* Form inputs */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 0.75rem !important;
+    }
+    
+    /* Checkboxes - better sizing */
+    .checkbox-group {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 0.75rem !important;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        margin-top: 2px !important;
+    }
+    
+    .checkbox-group label {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Submit button */
+    .form-group button[type="submit"],
+    .btn-submit {
+        width: 100% !important;
+        padding: 0.875rem !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Form labels */
+    .form-group label {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.35rem !important;
     }
 }

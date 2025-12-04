@@ -75,6 +75,10 @@ app.get('/treatments/cosmetic-dentistry', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'treatments', 'cosmetic-dentistry.html'));
 });
 
+app.get('/treatments/restorative-dentistry', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'treatments', 'restorative-dentistry.html'));
+});
+
 app.get('/treatments/preventative-care', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'treatments', 'preventative-care.html'));
 });

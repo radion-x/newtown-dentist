@@ -832,7 +832,8 @@ nav {
     line-height: 1.8;
 }
 
-.service-grid {
+.service-grid,
+.services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--space-xl);
@@ -847,6 +848,65 @@ nav {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Support for image-based service cards */
+.service-card:has(.service-card-image) {
+    padding: 0;
+}
+
+.service-card-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-image img {
+    transform: scale(1.05);
+}
+
+.service-card-content {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.service-card-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    flex: 1;
+}
+
+.service-link {
+    font-weight: 600;
+    color: var(--accent-indigo);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease;
+}
+
+.service-card:hover .service-link {
+    gap: 10px;
 }
 
 .service-card::before {
@@ -915,8 +975,8 @@ nav {
    =================================== */
 .how-it-works {
     padding: var(--space-4xl) 0;
-    background: var(--bg-darker) !important;
-    color: white;
+    background: #f8fafc !important; /* Light background */
+    color: var(--text-primary);
 }
 
 .how-it-works h2 {
@@ -924,11 +984,11 @@ nav {
     font-weight: 900;
     text-align: center;
     margin-bottom: var(--space-lg);
-    color: white;
+    color: var(--primary-dark);
 }
 
 .how-it-works .section-intro {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
 }
 
 /* FAQ specific styles within how-it-works section */
@@ -948,52 +1008,167 @@ nav {
 
 .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-xl);
     margin-bottom: var(--space-3xl);
 }
 
-.step-card {
+.step-item {
     padding: var(--space-2xl);
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: var(--radius-xl);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.step-card:hover {
+.step-item:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(89, 144, 174, 0.5);
+    box-shadow: 0 20px 40px rgba(43, 122, 120, 0.1);
+    border-color: rgba(43, 122, 120, 0.2);
 }
 
 .step-number {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background: var(--gradient-primary);
     color: white;
-    border-radius: var(--radius-md);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: var(--space-lg);
-    box-shadow: var(--shadow-glow);
-}
-
-.step-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
-    margin-bottom: var(--space-md);
-    color: white;
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 10px 20px rgba(43, 122, 120, 0.2);
 }
 
-.step-card p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.8;
+.step-item h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+    color: var(--primary-dark);
+}
+
+.step-item p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* ===================================
+   TREATMENT OFFER BANNER
+   =================================== */
+.treatment-offer-banner {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.treatment-offer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.treatment-offer-text {
+    flex: 1;
+}
+
+.offer-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--accent-primary);
+    color: white;
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.treatment-offer-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.treatment-offer-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.treatment-offer-price {
+    text-align: center;
+    padding: 0 2rem;
+    border-left: 1px solid #e2e8f0;
+    min-width: 220px;
+}
+
+.price-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-amount {
+    display: block;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+    margin: 0.5rem 0;
+    letter-spacing: -2px;
+}
+
+.price-was {
+    display: block;
+    font-size: 1rem;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.offer-terms {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+@media (max-width: 968px) {
+    .treatment-offer-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .treatment-offer-price {
+        border-left: none;
+        border-top: 1px solid #e2e8f0;
+        padding: 2rem 0 0;
+        width: 100%;
+    }
+    
+    .treatment-offer-text h2 {
+        font-size: 2rem;
+    }
 }
 
 .when-you-need {
@@ -3410,7 +3585,7 @@ footer > .container {
 /* Treatment Hero */
 .treatment-hero {
     background: var(--gradient-dark);
-    padding: var(--space-3xl) 0 var(--space-2xl);
+    padding: 0;
 }
 
 .treatment-hero h1 {
@@ -7279,8 +7454,298 @@ footer a:hover {
 }
 
 /* ===================================
-   PREMIUM TIPS SECTION STYLES
+   RELATED SERVICES SECTION
    =================================== */
+.related-services {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.related-services .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.related-services h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.related-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.related-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(43, 122, 120, 0.15);
+}
+
+.related-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.related-card:hover img {
+    transform: scale(1.05);
+}
+
+.related-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 1.5rem 1.5rem 0.5rem;
+}
+
+.related-card p {
+    color: var(--text-secondary);
+    margin: 0 1.5rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   BOOKING CTA SECTION
+   =================================== */
+.booking-cta {
+    padding: 6rem 0;
+    background: white;
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
+    border-radius: 32px;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-text {
+    position: relative;
+    z-index: 2;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(43, 122, 120, 0.1);
+    color: var(--primary);
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.booking-text h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.booking-text p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.booking-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.booking-image {
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(43, 122, 120, 0.1);
+}
+
+.booking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 968px) {
+    .booking-content {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .booking-buttons {
+        justify-content: center;
+    }
+    
+    .booking-image {
+        min-height: 300px;
+        order: -1; /* Image on top for mobile */
+    }
+    
+    .booking-text h2 {
+        font-size: 2.25rem;
+    }
+}
+
+/* ===================================
+   BENEFITS SECTION
+   =================================== */
+.benefits-section {
+    padding: 6rem 0;
+    background: white;
+}
+
+.benefits-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.benefits-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.benefits-header p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+}
+
+.benefits-layout {
+    display: none; /* Deprecated in favor of symmetrical layout */
+}
+
+.benefits-symmetrical-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.benefits-col-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.benefits-col-center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefits-col-center img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    object-fit: cover;
+    aspect-ratio: 3/4; /* Taller portrait aspect ratio */
+}
+
+.benefit-card-compact {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    text-align: center; /* Center text for symmetry */
+}
+
+.benefit-card-compact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(43, 122, 120, 0.1);
+    border-color: rgba(43, 122, 120, 0.2);
+}
+
+.benefit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(43, 122, 120, 0.1), rgba(58, 175, 169, 0.1));
+    color: var(--primary);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.benefit-card-compact h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card-compact p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Legacy support for other pages */
+.benefits-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 968px) {
+    .benefits-symmetrical-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .benefits-col-center {
+        order: -1; /* Image on top */
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .benefits-col-side {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
 .tips-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -7594,7 +8059,7 @@ footer a:hover {
     background: linear-gradient(135deg, rgba(43, 122, 120, 0.95) 0%, rgba(26, 92, 90, 0.98) 100%), url('/images/checkup_hero.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 400px; /* Taller for impact */
+    min-height: 280px; /* Reduced from 400px */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7623,10 +8088,10 @@ footer a:hover {
 }
 
 .page-hero.treatment-hero h1 {
-    font-size: clamp(3rem, 6vw, 4.5rem); /* Much larger */
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Adjusted for better fit */
     font-weight: 900;
     color: #ffffff;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     text-shadow: 0 4px 12px rgba(0,0,0,0.2);
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -7643,8 +8108,8 @@ footer a:hover {
 
 .page-hero.treatment-hero .breadcrumb {
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -7658,6 +8123,68 @@ footer a:hover {
 
 .page-hero.treatment-hero .breadcrumb a:hover {
     color: #ffffff;
+}
+
+/* --- TREATMENT INTRO SECTION --- */
+.treatment-intro {
+    padding: 6rem 0;
+    background: #ffffff;
+}
+
+.treatment-intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.treatment-intro-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.treatment-intro-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.treatment-intro-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.treatment-intro-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.treatment-intro-image:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 968px) {
+    .treatment-intro-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .treatment-intro-text {
+        text-align: center;
+    }
+    
+    .treatment-intro-image {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
 /* --- PREMIUM TIPS SECTION --- */
@@ -7834,10 +8361,11 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
     .page-hero.treatment-hero {
-        min-height: 300px;
+        min-height: 250px;
+        padding: 3rem 0;
     }
     .page-hero.treatment-hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
 }
 /* ===================================
@@ -7975,5 +8503,1177 @@ footer a:hover {
     
     .dropdown-submenu > a::after {
         display: none; /* Hide arrow on mobile */
+    }
+}
+
+/* ===================================
+   GENERAL DENTISTRY PAGE FIXES
+   =================================== */
+
+.why-choose-section {
+    padding: 6rem 0;
+    background: #ffffff;
+}
+
+.why-choose-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.why-choose-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.why-choose-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.offer-highlight-card {
+    background: #f0fdfa; /* Light teal background */
+    border: 2px solid var(--primary);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(43, 122, 120, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-badge {
+    display: inline-block;
+    background: var(--accent-primary);
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.offer-highlight-card h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.offer-price {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.offer-highlight-card p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Other Categories Fix */
+.other-categories {
+    padding: 6rem 0;
+    background: #f8fafc;
+}
+
+.other-categories .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.other-categories h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.category-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(43, 122, 120, 0.15);
+    border-color: rgba(43, 122, 120, 0.2);
+}
+
+.category-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-card-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.category-card-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.category-card-content p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ===================================
+   COSMETIC DENTISTRY PAGE FIXES
+   =================================== */
+
+/* Results Section */
+.results-section {
+    padding: 6rem 0;
+    background: #ffffff;
+}
+
+.results-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.results-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.results-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.results-text blockquote {
+    border-left: 4px solid var(--primary);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 0 12px 12px 0;
+}
+
+.results-text cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    font-style: normal;
+}
+
+.results-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.stat-item {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-color: var(--primary-light);
+}
+
+.stat-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Special Offer Banner */
+.special-offer-banner {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: white;
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.special-offer-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+}
+
+.offer-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.offer-banner-text {
+    flex: 1;
+}
+
+.offer-banner-text .offer-badge {
+    background: var(--accent-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.offer-banner-text h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: white;
+    line-height: 1.1;
+}
+
+.offer-banner-text p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0.5rem;
+}
+
+.offer-banner-text .offer-price {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 1.5rem 0;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.offer-banner-text .price-was {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: line-through;
+    font-weight: 400;
+    margin-left: 15px;
+}
+
+.offer-banner-text .offer-note {
+    font-size: 0.95rem;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+.special-offer-banner .btn {
+    background: white;
+    color: var(--primary-dark);
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.special-offer-banner .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    background: #f8fafc;
+}
+
+@media (max-width: 968px) {
+    .results-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .results-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .offer-banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .offer-banner-text h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .results-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .offer-banner-text .offer-price {
+        font-size: 3rem;
+    }
+}
+
+/* ===================================
+   COSMETIC DENTISTRY PAGE IMPROVEMENTS
+   =================================== */
+
+/* Results Section */
+.results-section {
+    padding: var(--space-4xl) 0;
+    background: var(--bg-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-3xl);
+    align-items: center;
+}
+
+.results-text h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+}
+
+.results-text .lead {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+}
+
+.testimonial-highlight {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    margin-top: var(--space-xl);
+    border-left: 4px solid var(--accent-indigo);
+}
+
+.testimonial-highlight .quote-icon {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    background: var(--accent-indigo);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-glow);
+}
+
+.testimonial-highlight .quote-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.testimonial-highlight blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+.testimonial-highlight cite {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+}
+
+.testimonial-highlight .author {
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.testimonial-highlight .location {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.results-stats-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-md);
+}
+
+.stat-card {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    color: var(--accent-indigo);
+    margin-bottom: var(--space-sm);
+    background: rgba(43, 122, 120, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Special Offer Section */
+.special-offer-section {
+    padding: var(--space-3xl) 0;
+}
+
+.offer-card {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-3xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2xl);
+    color: white;
+    box-shadow: var(--shadow-glow);
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1));
+    pointer-events: none;
+}
+
+.offer-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.offer-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+    backdrop-filter: blur(5px);
+}
+
+.offer-header h2 {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 900;
+    margin-bottom: var(--space-sm);
+    color: white;
+}
+
+.offer-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+}
+
+.offer-features {
+    list-style: none;
+    margin-bottom: var(--space-lg);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.offer-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.offer-terms {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.offer-pricing {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    min-width: 280px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+    color: var(--text-primary);
+}
+
+.price-tag {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+}
+
+.price-tag .currency {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.price-tag .amount {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.price-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: var(--space-lg);
+}
+
+.original-price {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    font-size: 0.95rem;
+}
+
+.save-label {
+    color: var(--accent-indigo);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.btn-white {
+    background: var(--primary);
+    color: white;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    display: inline-flex;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 968px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .offer-card {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-xl);
+    }
+    
+    .offer-features {
+        justify-content: center;
+    }
+    
+    .offer-pricing {
+        width: 100%;
+    }
+    
+    .offer-card::before {
+        width: 100%;
+        height: 50%;
+        top: 0;
+        background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1));
+    }
+}
+
+/* Benefits Section Improvements */
+.benefits-section {
+    padding: var(--space-4xl) 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.benefit-card {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(43, 122, 120, 0.2);
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(43, 122, 120, 0.1);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+}
+
+.benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.benefit-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   SERVICE GRID IMPROVEMENTS
+   =================================== */
+
+.services-grid-section {
+    padding: var(--space-4xl) 0;
+    background: var(--bg-dark);
+}
+
+.services-grid-section .section-header {
+    margin-bottom: var(--space-3xl); /* Increased spacing below header */
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-grid-section .section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: var(--space-md);
+    letter-spacing: -1px;
+}
+
+.services-grid-section .section-header p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Enhanced Service Cards */
+.service-card {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: white;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+.service-card-image {
+    height: 280px; /* Increased height for better visual impact */
+    position: relative;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+/* Add a subtle overlay gradient to make images look more premium */
+.service-card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.2) 100%);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-card-image::after {
+    opacity: 0.8;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.service-card:hover .service-card-image img {
+    transform: scale(1.1);
+}
+
+.service-card-content {
+    padding: 2.5rem; /* More breathing room */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.service-card p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: gap 0.3s ease;
+}
+
+.service-card:hover .service-link {
+    gap: 12px;
+    color: var(--primary-dark);
+}
+
+/* ===================================
+   STATS SECTION
+   =================================== */
+.stats-section {
+    padding: var(--space-4xl) 0;
+    background: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+    text-align: center;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+/* ===================================
+   DENTAL IMPLANTS PAGE STYLES
+   =================================== */
+
+/* Implant Options Grid */
+.implant-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-2xl);
+    margin-top: var(--space-xl);
+}
+
+.implant-options .option-card {
+    background: white;
+    padding: var(--space-3xl) var(--space-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.implant-options .option-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(43, 122, 120, 0.1);
+    border-color: rgba(43, 122, 120, 0.1);
+}
+
+.implant-options .card-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.implant-options .option-card:hover .card-icon {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+.implant-options h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: var(--space-lg);
+    color: var(--primary-dark);
+}
+
+.implant-options p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Candidate Section */
+.candidate-section {
+    padding: var(--space-4xl) 0;
+    background: linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.candidate-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+.candidate-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    margin-bottom: var(--space-md);
+    color: var(--primary-dark);
+}
+
+.candidate-content .lead {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+}
+
+.candidate-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-2xl) 0;
+    display: grid;
+    gap: var(--space-md);
+}
+
+.candidate-checklist li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease;
+}
+
+.candidate-checklist li:hover {
+    transform: translateX(5px);
+}
+
+.check-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--accent-emerald); /* Using emerald/green for check */
+    background: #10b981; /* Fallback/Specific green */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.candidate-checklist span:last-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.candidate-note {
+    background: rgba(89, 144, 174, 0.1);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    border-left: 5px solid var(--primary);
+}
+
+.candidate-note h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: var(--space-md);
+    color: var(--primary-dark);
+}
+
+.condition-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-sm);
+}
+
+.condition-list li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.condition-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Consultation Card Sidebar */
+.candidate-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.consultation-card {
+    background: white;
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.consultation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--gradient-primary);
+}
+
+.card-badge {
+    display: inline-block;
+    background: #fef3c7;
+    color: #d97706;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.consultation-card h3 {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin-bottom: var(--space-md);
+    color: var(--primary-dark);
+    line-height: 1.2;
+}
+
+.consultation-card p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+}
+
+.consultation-card .btn-block {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+}
+
+.card-phone {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0 !important;
+}
+
+.card-phone a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 968px) {
+    .candidate-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .candidate-sidebar {
+        position: static;
+        margin-top: var(--space-xl);
     }
 }

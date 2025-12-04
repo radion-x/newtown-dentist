@@ -10,8 +10,8 @@
     <link rel="icon" type="image/png" href="/images/icons/favicon.png">
     <link rel="apple-touch-icon" href="/images/icons/favicon.png">
 
-    <link rel="stylesheet" href="/css/styles.css?v=5.1">
-    <link rel="stylesheet" href="/css/mobile.css?v=5.1">
+    <link rel="stylesheet" href="/css/styles.css?v=5.7">
+    <link rel="stylesheet" href="/css/mobile.css?v=5.7">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -219,26 +219,54 @@
     <!-- Before/After Teaser -->
     <section class="results-section">
         <div class="container">
-            <div class="results-content">
+            <div class="results-grid">
                 <div class="results-text">
+                    <span class="section-subtitle">Patient Stories</span>
                     <h2>Real Results, Real Confidence</h2>
-                    <p>Our patients often tell us how transformative their cosmetic dental treatments have been – not just for their appearance, but for their self-confidence and quality of life.</p>
+                    <p class="lead">Our patients often tell us how transformative their cosmetic dental treatments have been – not just for their appearance, but for their self-confidence and quality of life.</p>
                     <p>Whether it's finally feeling comfortable smiling in photos, no longer covering their mouth when they laugh, or simply enjoying the feeling of a healthy, beautiful smile, the impact extends far beyond aesthetics.</p>
-                    <blockquote>
-                        <p>"I can't believe the difference. For years I hid my smile, but now I can't stop showing it off. Dr Angelo and the team made me feel so comfortable throughout the whole process."</p>
-                        <cite>— Sarah M., Newtown</cite>
-                    </blockquote>
+                    
+                    <div class="testimonial-highlight">
+                        <div class="quote-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+                            </svg>
+                        </div>
+                        <blockquote>
+                            "I can't believe the difference. For years I hid my smile, but now I can't stop showing it off. Dr Angelo and the team made me feel so comfortable throughout the whole process."
+                        </blockquote>
+                        <cite>
+                            <span class="author">Sarah M.</span>
+                            <span class="location">Newtown Patient</span>
+                        </cite>
+                    </div>
                 </div>
-                <div class="results-stats">
-                    <div class="stat-item">
+                <div class="results-stats-wrapper">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
                         <span class="stat-number">30+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5★</span>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                            </svg>
+                        </div>
+                        <span class="stat-number">5.0</span>
                         <span class="stat-label">Google Rating</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
                         <span class="stat-number">1000s</span>
                         <span class="stat-label">Happy Smiles</span>
                     </div>
@@ -248,17 +276,42 @@
     </section>
 
     <!-- Whitening Offer -->
-    <section class="special-offer-banner">
+    <section class="special-offer-section">
         <div class="container">
-            <div class="offer-banner-content">
-                <div class="offer-banner-text">
-                    <span class="offer-badge">Special Offer</span>
-                    <h2>Take-Home Whitening Kit</h2>
-                    <p>Custom trays with professional-grade whitening gel</p>
-                    <p class="offer-price">Only $349 <span class="price-was">(Valued at $600)</span></p>
-                    <p class="offer-note">Available when combined with your Checkup & Clean</p>
+            <div class="offer-card">
+                <div class="offer-content">
+                    <div class="offer-header">
+                        <span class="offer-badge">Limited Time Offer</span>
+                        <h2>Take-Home Whitening Kit</h2>
+                        <p>Professional-grade whitening in the comfort of your home.</p>
+                    </div>
+                    <ul class="offer-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Custom-fitted trays
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Professional-grade gel
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Safe & effective results
+                        </li>
+                    </ul>
+                    <p class="offer-terms">*Available when combined with your Checkup & Clean</p>
                 </div>
-                <a href="/special-offers" class="btn btn-primary btn-large">Learn More</a>
+                <div class="offer-pricing">
+                    <div class="price-tag">
+                        <span class="currency">$</span>
+                        <span class="amount">349</span>
+                    </div>
+                    <div class="price-details">
+                        <span class="original-price">Valued at $600</span>
+                        <span class="save-label">Save $251</span>
+                    </div>
+                    <a href="/contact" class="btn btn-white btn-large">Claim Offer</a>
+                </div>
             </div>
         </div>
     </section>
@@ -266,17 +319,52 @@
     <!-- Why Choose Us -->
     <section class="benefits-section alt-bg">
         <div class="container">
-            <div class="benefits-content">
-                <div class="benefits-text">
-                    <h2>Why Choose Dental on King for Cosmetic Dentistry?</h2>
-                    <ul class="benefits-list">
-                        <li><strong>Artistic Approach</strong><p>Dr Angelo combines dental expertise with an artistic eye to create natural, beautiful results</p></li>
-                        <li><strong>Premium Materials</strong><p>We use only the highest quality porcelain and composite materials for lasting results</p></li>
-                        <li><strong>Digital Planning</strong><p>Advanced imaging lets you preview your new smile before treatment begins</p></li>
-                        <li><strong>Personalised Care</strong><p>Every treatment plan is customised to your unique goals and facial features</p></li>
-                        <li><strong>Confidence Boost</strong><p>Feel proud to show off your smile in every photo and social interaction</p></li>
-                        <li><strong>Long-Lasting Results</strong><p>Durable treatments designed to stand the test of time with proper care</p></li>
-                    </ul>
+            <div class="section-header text-center">
+                <h2>Why Choose Dental on King?</h2>
+                <p>We combine artistic vision with clinical excellence to create smiles that look and feel natural.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    </div>
+                    <h3>Artistic Approach</h3>
+                    <p>Dr Angelo combines dental expertise with an artistic eye to create natural, beautiful results.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    </div>
+                    <h3>Premium Materials</h3>
+                    <p>We use only the highest quality porcelain and composite materials for lasting results.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h3>Digital Planning</h3>
+                    <p>Advanced imaging lets you preview your new smile before treatment begins.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <h3>Personalised Care</h3>
+                    <p>Every treatment plan is customised to your unique goals and facial features.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                    </div>
+                    <h3>Confidence Boost</h3>
+                    <p>Feel proud to show off your smile in every photo and social interaction.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3>Long-Lasting Results</h3>
+                    <p>Durable treatments designed to stand the test of time with proper care.</p>
                 </div>
             </div>
         </div>

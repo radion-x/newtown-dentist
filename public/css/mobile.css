@@ -2109,25 +2109,85 @@
         margin-bottom: 0.75rem !important;
     }
     
-    /* --- OFFER HIGHLIGHT SECTION --- */
+    /* --- OFFER HIGHLIGHT SECTION - COMPREHENSIVE MOBILE FIX --- */
     .offer-highlight-section {
-        padding: 2rem 0 !important;
+        padding: 1.5rem 0 !important;
+        background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%) !important;
     }
     
     .offer-highlight-content {
+        display: block !important;
         padding: 1.5rem !important;
+        border-radius: 16px !important;
+        gap: 0 !important;
+    }
+    
+    .offer-highlight-text {
+        text-align: center !important;
+        padding: 0 !important;
+    }
+    
+    .offer-highlight-text .offer-badge {
+        display: inline-block !important;
+        background: var(--accent-primary, #59B0AE) !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        padding: 0.4rem 1rem !important;
+        border-radius: 50px !important;
+        font-size: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
     }
     
     .offer-highlight-text h2,
     .offer-highlight-card h3 {
-        font-size: 1.5rem !important;
-        margin-bottom: 0.75rem !important;
+        font-size: 1.4rem !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.2 !important;
     }
     
+    .offer-highlight-text .offer-subtitle,
     .offer-highlight-text p,
     .offer-highlight-card p {
-        font-size: 1rem !important;
-        margin-bottom: 1rem !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 0.75rem !important;
+        color: #4a5568 !important;
+    }
+    
+    /* Price section - reduce space */
+    .offer-price-large {
+        margin: 1rem 0 !important;
+    }
+    
+    .offer-price-large .price-label {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .offer-price-large .price-amount {
+        font-size: 2.75rem !important;
+    }
+    
+    /* The includes list - show it and reduce spacing */
+    .offer-highlight-text .offer-includes,
+    .offer-includes {
+        display: block !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 1rem 0 !important;
+        text-align: left !important;
+    }
+    
+    .offer-highlight-text .offer-includes li,
+    .offer-includes li {
+        font-size: 0.9rem !important;
+        padding: 0.3rem 0 !important;
+        color: #4a5568 !important;
+        display: block !important;
+    }
+    
+    /* Offer highlight image - hide or reduce on mobile */
+    .offer-highlight-image {
+        display: none !important;
     }
     
     /* --- BUTTON TEXT VISIBILITY FIX --- */
@@ -2137,7 +2197,11 @@
     .btn-large,
     a.btn,
     a.btn-primary,
-    a.btn-large {
+    a.btn-large,
+    .offer-highlight-text .btn,
+    .offer-highlight-text .btn-primary,
+    .offer-highlight-text .btn-large,
+    .offer-highlight-text a.btn-primary {
         color: #ffffff !important;
         background: linear-gradient(135deg, #59B0AE 0%, #3d8a88 100%) !important;
         padding: 14px 24px !important;
@@ -2147,6 +2211,8 @@
         text-align: center !important;
         border-radius: 50px !important;
         text-decoration: none !important;
+        box-shadow: 0 4px 15px rgba(89, 176, 174, 0.3) !important;
+        margin-top: 0.5rem !important;
     }
     
     /* Secondary button variation */
@@ -2176,5 +2242,467 @@
     
     .page-hero .hero-content p {
         font-size: 1rem !important;
+    }
+    
+    /* --- TIPS SECTION MOBILE FIX --- */
+    .tips-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .tips-content-grid {
+        display: block !important;
+    }
+    
+    .tips-main h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
+        text-align: center !important;
+    }
+    
+    .tips-main > p {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .tips-list-detailed {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .tip-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        padding: 1.25rem !important;
+        background: white !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+        position: relative !important;
+    }
+    
+    /* TIP NUMBER - LEFT ALIGNED */
+    .tip-number {
+        flex-shrink: 0 !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        background: linear-gradient(135deg, #2b7a78 0%, #1a5d5b 100%) !important;
+        color: #ffffff !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.2rem !important;
+        font-weight: 800 !important;
+        line-height: 1 !important;
+        position: static !important;
+        order: -1 !important;
+    }
+    
+    .tip-content {
+        flex: 1 !important;
+        text-align: left !important;
+    }
+    
+    .tip-content h3 {
+        font-size: 1.05rem !important;
+        margin-bottom: 0.4rem !important;
+        color: #2b7a78 !important;
+        text-align: left !important;
+    }
+    
+    .tip-content p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: #4a5568 !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+    
+    /* Tips sidebar / FAQ on mobile */
+    .tips-sidebar {
+        margin-top: 2rem !important;
+    }
+    
+    .faq-section {
+        padding: 0 !important;
+    }
+    
+    .faq-section h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .faq-item {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .faq-item summary {
+        font-size: 0.95rem !important;
+        padding: 0.75rem !important;
+    }
+    
+    .faq-item p {
+        font-size: 0.9rem !important;
+        padding: 0.75rem !important;
+    }
+}
+
+/* ============================================
+   SPECIAL OFFER SECTION - MOBILE FIX
+   (cosmetic-dentistry page)
+   ============================================ */
+@media (max-width: 768px) {
+    .special-offer-section {
+        padding: 1.5rem 0 !important;
+    }
+    
+    /* Main offer card - FORCE teal background and stack vertically */
+    .special-offer-section .offer-card,
+    .offer-card {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        gap: 1.5rem !important;
+        background: linear-gradient(135deg, #2b7a78 0%, #1a5d5b 100%) !important;
+        border-radius: 16px !important;
+    }
+    
+    /* Offer content area - SHOW IT */
+    .special-offer-section .offer-content,
+    .offer-card .offer-content {
+        display: block !important;
+        text-align: center !important;
+        color: #ffffff !important;
+    }
+    
+    /* Badge styling - VISIBLE */
+    .special-offer-section .offer-badge,
+    .offer-card .offer-badge,
+    .offer-header .offer-badge {
+        display: inline-block !important;
+        background: rgba(255, 255, 255, 0.25) !important;
+        color: #ffffff !important;
+        font-size: 0.75rem !important;
+        padding: 0.4rem 1rem !important;
+        margin-bottom: 0.75rem !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Offer header */
+    .special-offer-section .offer-header,
+    .offer-card .offer-header {
+        display: block !important;
+    }
+    
+    .special-offer-section .offer-header h2,
+    .offer-card .offer-header h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.5rem !important;
+        color: #ffffff !important;
+    }
+    
+    .special-offer-section .offer-header p,
+    .offer-card .offer-header p {
+        font-size: 0.95rem !important;
+        margin-bottom: 1rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* Features list - SHOW IT */
+    .special-offer-section .offer-features,
+    .offer-card .offer-features {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        margin-bottom: 0.75rem !important;
+        list-style: none !important;
+        padding: 0 !important;
+    }
+    
+    .special-offer-section .offer-features li,
+    .offer-card .offer-features li {
+        font-size: 0.9rem !important;
+        color: #ffffff !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+    }
+    
+    .special-offer-section .offer-features li svg,
+    .offer-card .offer-features li svg {
+        stroke: #ffffff !important;
+    }
+    
+    .special-offer-section .offer-terms,
+    .offer-card .offer-terms {
+        font-size: 0.8rem !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        display: block !important;
+    }
+    
+    /* Pricing box - white card */
+    .special-offer-section .offer-pricing,
+    .offer-card .offer-pricing {
+        min-width: auto !important;
+        width: 100% !important;
+        padding: 1.5rem !important;
+        border-radius: 16px !important;
+        background: #ffffff !important;
+    }
+    
+    .special-offer-section .price-tag,
+    .offer-pricing .price-tag {
+        justify-content: center !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .special-offer-section .price-tag .currency,
+    .offer-pricing .price-tag .currency {
+        font-size: 1.25rem !important;
+        color: #2b7a78 !important;
+    }
+    
+    .special-offer-section .price-tag .amount,
+    .offer-pricing .price-tag .amount {
+        font-size: 3rem !important;
+        color: #2b7a78 !important;
+    }
+    
+    .special-offer-section .price-details,
+    .offer-pricing .price-details {
+        margin-bottom: 1rem !important;
+    }
+    
+    .special-offer-section .original-price,
+    .offer-pricing .original-price {
+        font-size: 0.9rem !important;
+        color: #666 !important;
+    }
+    
+    .special-offer-section .save-label,
+    .offer-pricing .save-label {
+        font-size: 1rem !important;
+        color: #2b7a78 !important;
+    }
+    
+    /* Button */
+    .special-offer-section .btn-white,
+    .special-offer-section .btn-large,
+    .offer-pricing .btn-white,
+    .offer-pricing .btn {
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+        width: 100% !important;
+        display: block !important;
+        text-align: center !important;
+        background: #2b7a78 !important;
+        color: #ffffff !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+    }
+}
+
+/* ============================================
+   OFFER HIGHLIGHT CARD - MOBILE FIX
+   (general-dentistry, why-choose-section)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Why Choose Section */
+    .why-choose-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .why-choose-content {
+        display: block !important;
+    }
+    
+    .why-choose-text {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .why-choose-text h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .benefits-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .benefits-list li {
+        padding: 0.75rem 0 !important;
+        border-bottom: 1px solid #e5e7eb !important;
+    }
+    
+    .benefits-list li strong {
+        font-size: 1rem !important;
+        color: #2b7a78 !important;
+        display: block !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .benefits-list li p {
+        font-size: 0.9rem !important;
+        color: #4a5568 !important;
+        margin: 0 !important;
+    }
+    
+    /* Offer Highlight Card - Fix badge visibility */
+    .offer-highlight-card {
+        background: #f0fdfa !important;
+        border: 2px solid #2b7a78 !important;
+        border-radius: 16px !important;
+        padding: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .offer-highlight-card .offer-badge,
+    .why-choose-cta .offer-badge {
+        display: inline-block !important;
+        background: #2b7a78 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        padding: 0.4rem 1rem !important;
+        border-radius: 50px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        font-size: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .offer-highlight-card h3 {
+        font-size: 1.25rem !important;
+        font-weight: 800 !important;
+        color: #1a202c !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .offer-highlight-card .offer-price {
+        font-size: 2rem !important;
+        font-weight: 900 !important;
+        color: #2b7a78 !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .offer-highlight-card p {
+        font-size: 0.95rem !important;
+        color: #4a5568 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .offer-highlight-card .btn,
+    .offer-highlight-card .btn-primary {
+        display: inline-block !important;
+        background: linear-gradient(135deg, #2b7a78 0%, #1a5d5b 100%) !important;
+        color: #ffffff !important;
+        padding: 12px 24px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-size: 1rem !important;
+        text-decoration: none !important;
+    }
+    
+    .why-choose-cta {
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+/* ============================================
+   TREATMENT OFFER BANNER - MOBILE FIX
+   (teeth-whitening page)
+   ============================================ */
+@media (max-width: 768px) {
+    .treatment-offer-banner {
+        padding: 1.5rem 0 !important;
+        margin: 1rem 0 !important;
+    }
+    
+    .treatment-offer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        gap: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .treatment-offer-text {
+        flex: none !important;
+    }
+    
+    /* Badge - make it visible with teal background */
+    .treatment-offer-banner .offer-badge,
+    .treatment-offer-text .offer-badge {
+        display: inline-block !important;
+        background: #2b7a78 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        padding: 0.4rem 1rem !important;
+        border-radius: 50px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        font-size: 0.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .treatment-offer-text h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .treatment-offer-text p {
+        font-size: 0.95rem !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Price section */
+    .treatment-offer-price {
+        border-left: none !important;
+        border-top: 1px solid #e2e8f0 !important;
+        padding: 1rem 0 0 0 !important;
+        min-width: auto !important;
+    }
+    
+    .treatment-offer-price .price-label {
+        font-size: 0.85rem !important;
+    }
+    
+    .treatment-offer-price .price-amount {
+        font-size: 3rem !important;
+        color: #2b7a78 !important;
+    }
+    
+    .treatment-offer-price .price-was {
+        font-size: 0.9rem !important;
+    }
+    
+    /* Button */
+    .treatment-offer-content .btn,
+    .treatment-offer-content .btn-primary,
+    .treatment-offer-content .btn-large {
+        display: inline-block !important;
+        background: linear-gradient(135deg, #2b7a78 0%, #1a5d5b 100%) !important;
+        color: #ffffff !important;
+        padding: 12px 28px !important;
+        border-radius: 50px !important;
+        font-weight: 700 !important;
+        font-size: 1rem !important;
+        text-decoration: none !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    .treatment-offer-banner .offer-terms {
+        font-size: 0.8rem !important;
+        margin-top: 1rem !important;
+        color: #666 !important;
     }
 }

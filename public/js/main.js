@@ -52,10 +52,10 @@ if (mobileMenuToggle && navLinks) {
         setHamburgerState(isActive);
     });
 
-    // Handle mobile dropdown toggles
-    const mobileDropdowns = document.querySelectorAll('.nav-item-dropdown');
+    // Handle mobile dropdown toggles (main dropdowns like Treatments)
+    const mobileDropdowns = document.querySelectorAll('.nav-links > li.dropdown, .nav-links > li.nav-item-dropdown');
     mobileDropdowns.forEach(dropdown => {
-        const dropdownLink = dropdown.querySelector('a[href*="service"]');
+        const dropdownLink = dropdown.querySelector(':scope > a');
         if (dropdownLink) {
             dropdownLink.addEventListener('click', (e) => {
                 // On mobile, toggle dropdown instead of navigating
@@ -73,21 +73,57 @@ if (mobileMenuToggle && navLinks) {
             });
         }
     });
-
-    // Close menu when clicking a non-dropdown link
-    document.querySelectorAll('.nav-links a:not(.nav-item-dropdown > a)').forEach(link => {
-        link.addEventListener('click', () => {
-            if (!isMobileView()) return;
-            mobileMenuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-            document.body.classList.remove('menu-open');
-            setMenuState(false);
-            setHamburgerState(false);
-            
-            // Close all dropdowns
-            mobileDropdowns.forEach(dropdown => {
-                dropdown.classList.remove('active');
+    
+    // Handle submenu toggles (General Dentistry, Cosmetic Dentistry, etc.)
+    const submenus = document.querySelectorAll('.dropdown-submenu');
+    submenus.forEach(submenu => {
+        const submenuLink = submenu.querySelector(':scope > a');
+        if (submenuLink) {
+            submenuLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    submenu.classList.toggle('active');
+                    
+                    // Close sibling submenus
+                    const siblings = submenu.parentElement.querySelectorAll('.dropdown-submenu');
+                    siblings.forEach(sibling => {
+                        if (sibling !== submenu) {
+                            sibling.classList.remove('active');
+                        }
+                    });
+                }
             });
+        }
+    });
+
+    // Close menu when clicking a non-dropdown link (only leaf links in dropdown menus)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (!isMobileView()) return;
+            
+            // Check if this is a parent of a dropdown (has submenu)
+            const parentLi = link.closest('li');
+            const hasSubmenu = parentLi && (parentLi.classList.contains('dropdown') || 
+                               parentLi.classList.contains('nav-item-dropdown') || 
+                               parentLi.classList.contains('dropdown-submenu'));
+            
+            // If it's a leaf link (no submenu), close the menu
+            if (!hasSubmenu) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                setMenuState(false);
+                setHamburgerState(false);
+                
+                // Close all dropdowns and submenus
+                mobileDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+                document.querySelectorAll('.dropdown-submenu.active').forEach(sub => {
+                    sub.classList.remove('active');
+                });
+            }
         });
     });
 
@@ -103,9 +139,12 @@ if (mobileMenuToggle && navLinks) {
             setMenuState(false);
             setHamburgerState(false);
             
-            // Close all dropdowns
+            // Close all dropdowns and submenus
             mobileDropdowns.forEach(dropdown => {
                 dropdown.classList.remove('active');
+            });
+            document.querySelectorAll('.dropdown-submenu.active').forEach(sub => {
+                sub.classList.remove('active');
             });
         }
     });

@@ -1881,3 +1881,125 @@
         margin-top: 1rem !important;
     }
 }
+
+/* ============================================
+   MOBILE DROPDOWN MENU - FULL FUNCTIONALITY
+   ============================================ */
+@media (max-width: 768px) {
+    /* Main dropdown item (Treatments) */
+    .dropdown,
+    .nav-item-dropdown {
+        position: relative !important;
+    }
+    
+    /* Override hover behavior - only use click/active on mobile */
+    .dropdown:hover > .dropdown-menu,
+    .nav-item-dropdown:hover > .dropdown-menu {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    
+    /* Show dropdown when active class is added via JS */
+    .dropdown.active > .dropdown-menu,
+    .nav-item-dropdown.active > .dropdown-menu {
+        display: block !important;
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-width: 100% !important;
+        border-radius: 0 !important;
+    }
+    
+    /* Dropdown menu items */
+    .dropdown-menu li {
+        border-bottom: 1px solid rgba(89, 144, 174, 0.1) !important;
+    }
+    
+    .dropdown-menu li:last-child {
+        border-bottom: none !important;
+    }
+    
+    .dropdown-menu a {
+        padding: 0.875rem 1.5rem 0.875rem 2rem !important;
+        font-size: 1rem !important;
+        color: #ffffff !important;
+        background: transparent !important;
+    }
+    
+    .dropdown-menu a:hover {
+        background: rgba(89, 144, 174, 0.15) !important;
+        padding-left: 2rem !important;
+    }
+    
+    /* Submenu styling */
+    .dropdown-submenu {
+        position: relative !important;
+    }
+    
+    /* Submenu arrow indicator */
+    .dropdown-submenu > a::after {
+        content: '+' !important;
+        float: right !important;
+        margin-right: 0.5rem !important;
+        font-weight: bold !important;
+        transition: transform 0.2s ease !important;
+    }
+    
+    .dropdown-submenu.active > a::after {
+        content: '-' !important;
+    }
+    
+    /* Hide submenu hover on mobile */
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    
+    /* Show submenu when active */
+    .dropdown-submenu.active > .dropdown-menu {
+        display: block !important;
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-width: 100% !important;
+    }
+    
+    /* Nested submenu items - indented */
+    .dropdown-submenu .dropdown-menu a {
+        padding-left: 3rem !important;
+        font-size: 0.95rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    .dropdown-submenu .dropdown-menu a:hover {
+        padding-left: 3rem !important;
+        background: rgba(89, 144, 174, 0.2) !important;
+    }
+
+    /* Treatments link - add arrow */
+    .dropdown > a::after,
+    .nav-item-dropdown > a::after {
+        content: '▼' !important;
+        font-size: 0.6rem !important;
+        margin-left: 0.5rem !important;
+        display: inline-block !important;
+        transition: transform 0.2s ease !important;
+    }
+    
+    .dropdown.active > a::after,
+    .nav-item-dropdown.active > a::after {
+        transform: rotate(180deg) !important;
+    }
+}

@@ -9677,3 +9677,42 @@ footer a:hover {
         margin-top: var(--space-xl);
     }
 }
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Optimize image rendering */
+img {
+    content-visibility: auto;
+}
+
+/* Reduce layout shift for images with aspect-ratio */
+.treatment-card-image img,
+.service-card-image img,
+.about-intro-image img,
+.team-image img,
+.booking-image img {
+    aspect-ratio: 3/2;
+    object-fit: cover;
+}
+
+/* Ensure logo doesn't cause CLS */
+.logo-image {
+    width: 180px;
+    height: auto;
+    aspect-ratio: 600/131;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+    aspect-ratio: 650/273;
+}
+
+/* Payment/Accreditation logos fixed size */
+.payment-logos img,
+.accreditation-logos img {
+    height: 20px;
+    width: auto;
+}

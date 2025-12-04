@@ -2003,3 +2003,38 @@
         transform: rotate(180deg) !important;
     }
 }
+
+/* ============================================
+   MOBILE DROPDOWN TEXT COLOR FIX - OVERRIDE
+   ============================================ */
+@media (max-width: 768px) {
+    /* Force ALL dropdown text to be white on dark background */
+    .nav-links .dropdown-menu a,
+    .nav-links .dropdown-submenu > a,
+    .nav-links .dropdown-submenu .dropdown-menu a,
+    .dropdown-menu li a,
+    .dropdown-submenu > a,
+    li.dropdown-submenu > a {
+        color: #ffffff !important;
+    }
+    
+    /* Submenu category headers (General Dentistry, Cosmetic, etc) */
+    .dropdown-submenu > a {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Nested items under categories */
+    .dropdown-submenu .dropdown-menu li a {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* Hover states */
+    .dropdown-menu a:hover,
+    .dropdown-menu a:active,
+    .dropdown-submenu > a:hover,
+    .dropdown-submenu .dropdown-menu a:hover {
+        color: #ffffff !important;
+        background: rgba(89, 144, 174, 0.25) !important;
+    }
+}

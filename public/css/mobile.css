@@ -2038,3 +2038,143 @@
         background: rgba(89, 144, 174, 0.25) !important;
     }
 }
+
+/* ============================================
+   TREATMENT CATEGORY PAGES - MOBILE FIXES
+   (cosmetic-dentistry, preventative-care, etc)
+   ============================================ */
+@media (max-width: 768px) {
+    /* --- REDUCE TREATMENT INTRO WHITESPACE --- */
+    .treatment-intro {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .treatment-intro-content {
+        gap: 1.5rem !important;
+    }
+    
+    .treatment-intro-text h2 {
+        font-size: 1.75rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .treatment-intro-text p {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .treatment-intro-image {
+        max-width: 100% !important;
+        border-radius: 16px !important;
+    }
+    
+    /* --- REDUCE SERVICES GRID WHITESPACE --- */
+    .services-grid-section {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .services-grid-section .section-header {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .services-grid-section .section-header h2 {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .services-grid-section .section-header p {
+        font-size: 1rem !important;
+    }
+    
+    /* --- SERVICE CARDS MOBILE STYLING --- */
+    .service-card {
+        margin-bottom: 1.25rem !important;
+    }
+    
+    .service-card-image {
+        height: 180px !important;
+    }
+    
+    .service-card-content {
+        padding: 1.25rem !important;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .service-card p {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* --- OFFER HIGHLIGHT SECTION --- */
+    .offer-highlight-section {
+        padding: 2rem 0 !important;
+    }
+    
+    .offer-highlight-content {
+        padding: 1.5rem !important;
+    }
+    
+    .offer-highlight-text h2,
+    .offer-highlight-card h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .offer-highlight-text p,
+    .offer-highlight-card p {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* --- BUTTON TEXT VISIBILITY FIX --- */
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    .btn-large,
+    a.btn,
+    a.btn-primary,
+    a.btn-large {
+        color: #ffffff !important;
+        background: linear-gradient(135deg, #59B0AE 0%, #3d8a88 100%) !important;
+        padding: 14px 24px !important;
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        display: inline-block !important;
+        text-align: center !important;
+        border-radius: 50px !important;
+        text-decoration: none !important;
+    }
+    
+    /* Secondary button variation */
+    .btn-secondary {
+        background: #ffffff !important;
+        color: #1a202c !important;
+        border: 2px solid #e5e7eb !important;
+    }
+    
+    /* Service link styling */
+    .service-link {
+        color: var(--primary) !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+    }
+    
+    /* --- PAGE HERO MOBILE ADJUSTMENTS --- */
+    .page-hero.treatment-hero {
+        padding: 6rem 0 3rem !important;
+        min-height: 0 !important;
+    }
+    
+    .page-hero .hero-content h1 {
+        font-size: 2rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .page-hero .hero-content p {
+        font-size: 1rem !important;
+    }
+}

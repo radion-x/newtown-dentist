@@ -308,7 +308,8 @@ nav {
     position: relative;
 }
 
-.nav-item-dropdown {
+.nav-item-dropdown,
+.dropdown {
     position: relative;
 }
 
@@ -332,7 +333,27 @@ nav {
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 }
 
-.nav-item-dropdown:hover .dropdown-menu {
+.nav-item-dropdown:hover > .dropdown-menu,
+.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Nested Dropdown Support */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -5px;
+    margin-left: 0;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
     display: block;
     opacity: 1;
     visibility: visible;
@@ -7254,5 +7275,705 @@ footer a:hover {
 
     .chat-icon::before {
         font-size: 1.5rem;
+    }
+}
+
+/* ===================================
+   PREMIUM TIPS SECTION STYLES
+   =================================== */
+.tips-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.tips-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
+}
+
+.tips-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(43, 122, 120, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.tips-main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tips-main > h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.tips-main > h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.tips-main > p {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+}
+
+.tips-list-detailed {
+    display: grid;
+    gap: 24px;
+}
+
+.tip-item {
+    display: flex;
+    gap: 24px;
+    padding: 32px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(43, 122, 120, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tip-item:hover {
+    transform: translateY(-4px) translateX(4px);
+    box-shadow: 0 12px 40px rgba(43, 122, 120, 0.15);
+    border-color: rgba(43, 122, 120, 0.2);
+}
+
+.tip-item:hover::before {
+    opacity: 1;
+}
+
+.tip-number {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a5d5b 100%);
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(43, 122, 120, 0.3);
+    position: relative;
+}
+
+.tip-number::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 19px;
+    background: linear-gradient(135deg, rgba(43, 122, 120, 0.3), transparent);
+    z-index: -1;
+}
+
+.tip-content {
+    flex: 1;
+}
+
+.tip-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.tip-item:hover .tip-content h3 {
+    color: var(--primary);
+}
+
+.tip-content p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Premium FAQ Grid Styles */
+.faq-section {
+    padding: 80px 0;
+}
+
+.faq-section .section-header {
+    margin-bottom: 50px;
+}
+
+.faq-section .section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    position: relative;
+}
+
+.faq-section .section-header h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-grid .faq-item {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(43, 122, 120, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-grid .faq-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(43, 122, 120, 0.15);
+    border-color: var(--primary);
+}
+
+.faq-grid .faq-item[open] {
+    background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 100%);
+    border-color: var(--primary);
+}
+
+.faq-grid .faq-item summary {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    line-height: 1.5;
+}
+
+.faq-grid .faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-grid .faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.faq-grid .faq-item[open] summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-grid .faq-item:hover summary::after {
+    transform: scale(1.1);
+}
+
+.faq-grid .faq-item p {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tips Section Responsive */
+@media (max-width: 768px) {
+    .tips-section {
+        padding: 60px 0;
+    }
+    
+    .tip-item {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        text-align: center;
+    }
+    
+    .tip-number {
+        margin: 0 auto;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .faq-grid .faq-item {
+        min-height: auto;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* ===================================
+   SPECTACULAR DESIGN UPDATE (DEC 2025)
+   Hero, Tips & FAQ Overhaul
+   =================================== */
+
+/* --- SPECTACULAR HERO --- */
+.page-hero.treatment-hero {
+    background: linear-gradient(135deg, rgba(43, 122, 120, 0.95) 0%, rgba(26, 92, 90, 0.98) 100%), url('/images/checkup_hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* Taller for impact */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.page-hero.treatment-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+    pointer-events: none;
+}
+
+.page-hero.treatment-hero .page-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.page-hero.treatment-hero h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem); /* Much larger */
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.page-hero.treatment-hero p {
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.page-hero.treatment-hero .breadcrumb {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-hero.treatment-hero .breadcrumb a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.page-hero.treatment-hero .breadcrumb a:hover {
+    color: #ffffff;
+}
+
+/* --- PREMIUM TIPS SECTION --- */
+.tips-section {
+    padding: 6rem 0;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    position: relative;
+}
+
+.tips-main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tips-main h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tips-main > p {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.tips-list-detailed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+}
+
+.tip-item {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tip-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(43, 122, 120, 0.1);
+    border-color: rgba(43, 122, 120, 0.2);
+}
+
+.tip-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(43, 122, 120, 0.1);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+}
+
+.tip-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+.tip-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- BALANCED FAQ GRID (3 Columns) --- */
+.faq-section {
+    background: #ffffff;
+    padding: 6rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns for 6 items */
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 0; /* Reset padding for details/summary structure */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    height: fit-content; /* Allow them to grow naturally */
+}
+
+.faq-item:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+    border-color: var(--primary-light);
+}
+
+.faq-item summary {
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 3rem; /* Space for icon */
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-item p {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+    border-top: 1px solid transparent;
+}
+
+.faq-item[open] p {
+    border-top-color: #f1f5f9;
+    padding-top: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    }
+    .page-hero.treatment-hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    .tips-list-detailed {
+        grid-template-columns: 1fr;
+    }
+    .page-hero.treatment-hero {
+        min-height: 300px;
+    }
+    .page-hero.treatment-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+/* ===================================
+   SPECTACULAR BENEFITS LIST (DEC 2025)
+   =================================== */
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+}
+
+.benefits-list li {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow: hidden;
+}
+
+.benefits-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(43, 122, 120, 0.1);
+    border-color: rgba(43, 122, 120, 0.2);
+}
+
+/* Decorative Checkmark Icon */
+.benefits-list li::before {
+    content: '✓';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary), var(--accent-primary));
+    color: white;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(43, 122, 120, 0.25);
+}
+
+.benefits-list li strong {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.benefits-list li p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .benefits-list li {
+        padding: 1.5rem;
+    }
+}
+
+/* ===================================
+   MULTI-LEVEL DROPDOWN MENU
+   =================================== */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Arrow for submenu */
+.dropdown-submenu > a::after {
+    content: "›";
+    float: right;
+    margin-left: 10px;
+    font-size: 1.2em;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-submenu:hover > a::after {
+    transform: translateX(3px);
+}
+
+/* Mobile adjustments for multi-level */
+@media (max-width: 768px) {
+    .dropdown-submenu .dropdown-menu {
+        position: static;
+        margin-left: 1rem;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none; /* Hidden by default on mobile until toggled, or just show all? */
+        /* For simplicity in this update, we might let mobile.css handle it or just show them stacked */
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+    
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-submenu > a::after {
+        display: none; /* Hide arrow on mobile */
     }
 }

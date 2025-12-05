@@ -5560,8 +5560,9 @@ footer a:hover {
     align-items: start;
 }
 
-.offer-card {
-    background: white;
+/* Specific styling for offer cards in the offers grid (Special Offers page) */
+.offers-grid .offer-card {
+    background: white !important;
     border-radius: var(--radius-xl);
     padding: var(--space-2xl);
     box-shadow: var(--shadow-card);
@@ -5571,15 +5572,20 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
+    color: var(--text-primary);
 }
 
-.offer-card:hover {
+.offers-grid .offer-card::before {
+    display: none; /* Remove the gradient overlay */
+}
+
+.offers-grid .offer-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-card-hover);
     border-color: var(--primary-light);
 }
 
-.offer-card-badge {
+.offers-grid .offer-card-badge {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -5592,74 +5598,74 @@ footer a:hover {
     text-transform: uppercase;
 }
 
-.offer-card-featured {
+.offers-grid .offer-card-featured {
     border: 2px solid var(--primary);
     transform: scale(1.02);
     box-shadow: 0 20px 40px rgba(43, 122, 120, 0.15);
     z-index: 2;
 }
 
-.offer-card-featured .offer-card-badge {
+.offers-grid .offer-card-featured .offer-card-badge {
     background: var(--primary);
     color: white;
 }
 
-.offer-card-header {
+.offers-grid .offer-card-header {
     margin-bottom: var(--space-lg);
     padding-right: 60px; /* Space for badge */
 }
 
-.offer-card-header h3 {
+.offers-grid .offer-card-header h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
     line-height: 1.3;
 }
 
-.offer-card-header p {
+.offers-grid .offer-card-header p {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin: 0;
 }
 
-.offer-card-price {
+.offers-grid .offer-card-price {
     margin-bottom: var(--space-xl);
     padding-bottom: var(--space-lg);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-.offer-card-price .price-label {
+.offers-grid .offer-card-price .price-label {
     font-size: 1rem;
     color: var(--text-secondary);
     font-weight: 500;
 }
 
-.offer-card-price .price-amount {
+.offers-grid .offer-card-price .price-amount {
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--primary);
     line-height: 1;
 }
 
-.offer-card-price .price-was {
+.offers-grid .offer-card-price .price-was {
     font-size: 1rem;
     color: #94a3b8;
     text-decoration: line-through;
     margin-left: auto;
 }
 
-.offer-card-features {
+.offers-grid .offer-card-features {
     list-style: none;
     padding: 0;
     margin: 0 0 var(--space-xl) 0;
     flex-grow: 1;
 }
 
-.offer-card-features li {
+.offers-grid .offer-card-features li {
     margin-bottom: 1rem;
     color: var(--text-secondary);
     display: flex;
@@ -5668,20 +5674,22 @@ footer a:hover {
     line-height: 1.5;
 }
 
-.offer-card-features li::before {
+.offers-grid .offer-card-features li::before {
     content: '✓';
     color: var(--primary);
     font-weight: 800;
 }
 
-.offer-card .btn {
+.offers-grid .offer-card .btn {
     width: 100%;
     justify-content: center;
     padding: 1rem;
     font-size: 1.1rem;
+    background: var(--gradient-primary);
+    color: white;
 }
 
-.offer-card-note {
+.offers-grid .offer-card-note {
     text-align: center;
     font-size: 0.85rem;
     color: var(--text-secondary);
@@ -9149,7 +9157,7 @@ footer a:hover {
     padding: var(--space-3xl) 0;
 }
 
-.offer-card {
+.special-offer-section .offer-card {
     background: var(--gradient-primary);
     border-radius: var(--radius-2xl);
     padding: var(--space-3xl);
@@ -9163,7 +9171,7 @@ footer a:hover {
     overflow: hidden;
 }
 
-.offer-card::before {
+.special-offer-section .offer-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -9303,7 +9311,7 @@ footer a:hover {
         gap: var(--space-xl);
     }
     
-    .offer-card {
+    .special-offer-section .offer-card {
         flex-direction: column;
         text-align: center;
         padding: var(--space-xl);
@@ -9317,7 +9325,7 @@ footer a:hover {
         width: 100%;
     }
     
-    .offer-card::before {
+    .special-offer-section .offer-card::before {
         width: 100%;
         height: 50%;
         top: 0;

@@ -2360,9 +2360,8 @@
         padding: 1.5rem 0 !important;
     }
     
-    /* Main offer card - FORCE teal background and stack vertically */
-    .special-offer-section .offer-card,
-    .offer-card {
+    /* Main offer card - ONLY for .special-offer-section (treatment pages teal card) */
+    .special-offer-section .offer-card {
         display: flex !important;
         flex-direction: column !important;
         padding: 1.5rem !important;
@@ -2371,17 +2370,15 @@
         border-radius: 16px !important;
     }
     
-    /* Offer content area - SHOW IT */
-    .special-offer-section .offer-content,
-    .offer-card .offer-content {
+    /* Offer content area - ONLY for .special-offer-section */
+    .special-offer-section .offer-content {
         display: block !important;
         text-align: center !important;
         color: #ffffff !important;
     }
     
-    /* Badge styling - VISIBLE */
+    /* Badge styling - ONLY for .special-offer-section */
     .special-offer-section .offer-badge,
-    .offer-card .offer-badge,
     .offer-header .offer-badge {
         display: inline-block !important;
         background: rgba(255, 255, 255, 0.25) !important;
@@ -2393,29 +2390,25 @@
         font-weight: 700 !important;
     }
     
-    /* Offer header */
-    .special-offer-section .offer-header,
-    .offer-card .offer-header {
+    /* Offer header - ONLY for .special-offer-section */
+    .special-offer-section .offer-header {
         display: block !important;
     }
     
-    .special-offer-section .offer-header h2,
-    .offer-card .offer-header h2 {
+    .special-offer-section .offer-header h2 {
         font-size: 1.4rem !important;
         margin-bottom: 0.5rem !important;
         color: #ffffff !important;
     }
     
-    .special-offer-section .offer-header p,
-    .offer-card .offer-header p {
+    .special-offer-section .offer-header p {
         font-size: 0.95rem !important;
         margin-bottom: 1rem !important;
         color: rgba(255, 255, 255, 0.9) !important;
     }
     
-    /* Features list - SHOW IT */
-    .special-offer-section .offer-features,
-    .offer-card .offer-features {
+    /* Features list - ONLY for .special-offer-section */
+    .special-offer-section .offer-features {
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
@@ -2425,8 +2418,7 @@
         padding: 0 !important;
     }
     
-    .special-offer-section .offer-features li,
-    .offer-card .offer-features li {
+    .special-offer-section .offer-features li {
         font-size: 0.9rem !important;
         color: #ffffff !important;
         display: flex !important;
@@ -2434,21 +2426,18 @@
         gap: 0.5rem !important;
     }
     
-    .special-offer-section .offer-features li svg,
-    .offer-card .offer-features li svg {
+    .special-offer-section .offer-features li svg {
         stroke: #ffffff !important;
     }
     
-    .special-offer-section .offer-terms,
-    .offer-card .offer-terms {
+    .special-offer-section .offer-terms {
         font-size: 0.8rem !important;
         color: rgba(255, 255, 255, 0.7) !important;
         display: block !important;
     }
     
-    /* Pricing box - white card */
-    .special-offer-section .offer-pricing,
-    .offer-card .offer-pricing {
+    /* Pricing box - white card - ONLY for .special-offer-section */
+    .special-offer-section .offer-pricing {
         min-width: auto !important;
         width: 100% !important;
         padding: 1.5rem !important;
@@ -2704,5 +2693,59 @@
         font-size: 0.8rem !important;
         margin-top: 1rem !important;
         color: #666 !important;
+    }
+}
+
+/* ============================================
+   SPECIAL OFFERS PAGE - OFFERS GRID CARDS
+   (special-offers.html - WHITE background cards)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Override for Special Offers page - WHITE cards with dark text */
+    .offers-grid-section .offer-card,
+    .offers-grid .offer-card {
+        background: #ffffff !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        padding: 1.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .offers-grid-section .offer-card .offer-content,
+    .offers-grid .offer-card .offer-content {
+        color: #333333 !important;
+    }
+    
+    .offers-grid-section .offer-card .offer-header h3,
+    .offers-grid .offer-card .offer-header h3 {
+        color: #1a3c40 !important;
+        font-size: 1.3rem !important;
+    }
+    
+    .offers-grid-section .offer-card .offer-header p,
+    .offers-grid .offer-card .offer-header p {
+        color: #555555 !important;
+    }
+    
+    .offers-grid-section .offer-card .offer-badge,
+    .offers-grid .offer-card .offer-badge {
+        background: linear-gradient(135deg, #2b7a78 0%, #1a5d5b 100%) !important;
+        color: #ffffff !important;
+    }
+    
+    .offers-grid-section .offer-card .offer-features li,
+    .offers-grid .offer-card .offer-features li {
+        color: #333333 !important;
+    }
+    
+    .offers-grid-section .offer-card .offer-features li svg,
+    .offers-grid .offer-card .offer-features li svg {
+        stroke: #2b7a78 !important;
+    }
+    
+    .offers-grid-section .offer-card .offer-terms,
+    .offers-grid .offer-card .offer-terms {
+        color: #666666 !important;
     }
 }
